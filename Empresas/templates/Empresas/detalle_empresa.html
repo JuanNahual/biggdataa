@@ -1,0 +1,64 @@
+{% extends 'Empresas/base.html' %}
+{% block content %}
+    <div class="container empresa-detail">
+        <!-- Encabezado -->
+        <header class="empresa-header">
+            <!-- Mostrar la imagen de la empresa -->
+                        <h1 class="empresa-nombre">{{ empresa.nombre }}</h1>
+            <p class="empresa-rubro"><strong>Rubro:</strong> {{ empresa.rubro|capfirst }}</p>
+            {% if empresa.imagen %}
+                <img src="{{ empresa.imagen.url }}" alt="{{ empresa.nombre }}" class="empresa-imagen">
+            {% else %}
+                <div class="empresa-imagen-placeholder">No hay imagen disponible</div>
+            {% endif %}
+
+        </header>
+
+        <!-- Descripción -->
+        <section class="empresa-descripcion">
+            <p>{{ empresa.descripcion }}</p>
+        </section>
+
+        <!-- Sitio Web -->
+        <div class="empresa-website">
+            <a href="{{ empresa.website }}" class="website-link" target="_blank">
+                <i class="fas fa-globe"></i> Visitar sitio web
+            </a>
+        </div>
+
+        <!-- Redes Sociales -->
+        <section class="empresa-redes">
+            <h2>Redes Sociales</h2>
+            <ul class="social-links">
+                {% if empresa.facebook %}
+                    <li>
+                        <a href="{{ empresa.facebook }}" class="social-link" target="_blank">
+                            <i class="fab fa-facebook"></i> Facebook
+                        </a>
+                    </li>
+                {% endif %}
+                {% if empresa.instagram %}
+                    <li>
+                        <a href="{{ empresa.instagram }}" class="social-link" target="_blank">
+                            <i class="fab fa-instagram"></i> Instagram
+                        </a>
+                    </li>
+                {% endif %}
+                {% if empresa.twitter %}
+                    <li>
+                        <a href="{{ empresa.twitter }}" class="social-link" target="_blank">
+                            <i class="fab fa-twitter"></i> Twitter
+                        </a>
+                    </li>
+                {% endif %}
+            </ul>
+        </section>
+
+        <!-- Botón de Volver -->
+        <div class="back-link-container">
+            <a href="{% url 'lista_empresas' %}" class="back-link">
+                <i class="fas fa-arrow-left"></i> Volver a la lista
+            </a>
+        </div>
+    </div>
+{% endblock %}

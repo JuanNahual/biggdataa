@@ -1,0 +1,57 @@
+
+    {% extends 'Empresas/base.html' %}
+    {% block content %}
+    <div class="container">
+        <h1>Empresas Registradas</h1>
+
+        <form id="filterForm">
+            <input type="text" id="searchInput" name="q" placeholder="Buscar por nombre...">
+            <select id="rubroSelect" name="rubro">
+                <option value="">-- RUBROS --</option>
+                {% for rubro in rubros %}
+                    <option value="{{ rubro }}">{{ rubro|capfirst }}</option>
+                {% endfor %}
+            </select>
+        </form>
+
+        <ul id="empresaLista" class="empresa-lista">
+            {% for empresa in empresas %}
+                <li class="empresa-item" onclick="window.location.href='{% url 'detalle_empresa' empresa.id %}'">
+                    <a href="{% url 'detalle_empresa' empresa.id %}">{{ empresa.nombre }}</a>
+                    <p><strong>Rubro:</strong> {{ empresa.rubro|capfirst }}</p>
+                    <p><a href="{{ empresa.website }}" target="_blank">Visitar sitio web</a></p>
+                </li>
+            {% empty %}
+                <li class="empty-message">No se encontraron resultados.</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const searchInput = document.getElementById("searchInput");
+            const rubroSelect = document.getElementById("rubroSelect");
+            const empresaLista = document.getElementById("empresaLista");
+
+            function fetchEmpresas() {
+                const query = searchInput.value;
+                const rubro = rubroSelect.value;
+
+                fetch(`{% url 'lista_empresas' %}?q=${query}&rubro=${rubro}`)
+                .then(response => response.text())
+                .then(html => {
+                    empresaLista.innerHTML = new DOMParser().parseFromString(html, "text/html").getElementById("empresaLista").innerHTML;
+                })
+                .catch(error => console.error("Error al obtener datos:", error));
+            }
+
+            // Búsqueda en tiempo real por nombre
+            searchInput.addEventListener("input", fetchEmpresas);
+
+            // Filtro automático por rubro al cambiar selección
+            rubroSelect.addEventListener("change", fetchEmpresas);
+        });
+    </script>
+{% endblock %}
+
+

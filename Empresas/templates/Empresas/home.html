@@ -1,0 +1,13 @@
+{% extends 'Empresas/base.html' %}
+
+{% block title %}Bienvenido a Empresas Registradas{% endblock %}
+
+{% block content %}
+    <h1>Bienvenido a Empresas Registradas</h1>
+    <p>Explora una lista de empresas de diversos rubros, encuentra información relevante y visita sus sitios web.</p>
+
+    <div class="buttons">
+        <a href="{% url 'lista_empresas' %}" class="btn">Ver Empresas</a>
+        <a href="#about" class="btn">Acerca de</a>
+    </div>
+{% endblock %}
