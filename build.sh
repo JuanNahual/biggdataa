@@ -7,6 +7,8 @@ pip install -r requirements.txt
 
 python manage.py collectstatic --noinput
 python manage.py migrate
+# Crear la carpeta media si no existe
+mkdir -p media
 # Crear superusuario con variables de entorno
 echo "from django.contrib.auth import get_user_model
 import os
