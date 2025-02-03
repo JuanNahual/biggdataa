@@ -7,6 +7,7 @@
                         <h1 class="empresa-nombre">{{ empresa.nombre }}</h1>
             <p class="empresa-rubro"><strong>Rubro:</strong> {{ empresa.rubro|capfirst }}</p>
             {% if empresa.imagen %}
+                <p>Imagen URL: {{ empresa.imagen.url }}</p>
                 <img src="{{ empresa.imagen.url }}" alt="{{ empresa.nombre }}" class="empresa-imagen">
             {% else %}
                 <div class="empresa-imagen-placeholder">No hay imagen disponible</div>
