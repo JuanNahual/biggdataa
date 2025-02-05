@@ -9,23 +9,47 @@
     <style>
          body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            color: white;
             margin: 0;
             padding: 20px;
+            background-color: #000;
+            text-align: center;
+            justify-content: center;
         }
         .container {
             max-width: 800px;
             margin: 0 auto;
-            background: #fff;
-            padding: 30px;
+            background: #000;
+            padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        h1 {
-            text-align: center;
-            color: #333;
-            font-size: 28px;
-        }
+
+        header h1 {
+    font-size: 50px;
+    font-weight: 700;
+}
+
+.big {
+    color: white;
+}
+
+.data {
+    color: #D8831D;
+}
+
+.subtitulo {
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.descripcion {
+    font-size: 12px;
+    margin: 10px 0;
+    opacity: 0.8;
+    color: white;
+}
         form {
             display: flex;
             flex-wrap: wrap;
@@ -39,6 +63,7 @@
             border-radius: 5px;
             font-size: 16px;
             outline: none;
+            background-color: #E5E5E5;
         }
         input {
             flex: 1;
@@ -54,10 +79,10 @@
             padding: 0;
         }
         .empresa-item {
-            background: #f9f9f9;
+            background: #E5E5E5;
             padding: 20px;
             margin-bottom: 10px;
-            border-left: 5px solid #007BFF;
+            border-left: 5px solid #D8831D;
             border-radius: 5px;
             transition: transform 0.2s ease-in-out;
             cursor: pointer;
@@ -70,7 +95,7 @@
             text-decoration: none;
             font-size: 18px;
             font-weight: bold;
-            color: #007BFF;
+            color: #D8831D;
             display: block;
         }
         .empresa-item p {
@@ -134,8 +159,7 @@
             transition: background 0.3s ease;
         }
         .back-link:hover {
-            background: #0056b3;
-            /* Estilos generales */
+            background: #000;            /* Estilos generales */
 .container {
     max-width: 800px;
     margin: 0 auto;
@@ -239,76 +263,131 @@
 .back-link:hover {
     background-color: #1a2a3a;
 }
-        }
-        .empresa-imagen {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+/*
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
-.empresa-imagen-placeholder {
-    width: 100%;
-    height: 200px;
-    background-color: #f4f4f4;
-    border-radius: 10px;
+body {
+    background-color: #000;
+    color: white;
     display: flex;
-    align-items: center;
     justify-content: center;
-    color: #777;
-    font-size: 1.2rem;
-    margin-bottom: 20px;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
 }
+
+.container {
+    width: 90%;
+    max-width: 600px;
+}
+
+header h1 {
+    font-size: 50px;
+    font-weight: 700;
+}
+
+.big {
+    color: white;
+}
+
+.data {
+    color: #D8831D;
+}
+
+.subtitulo {
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.descripcion {
+    font-size: 12px;
+    margin: 10px 0;
+    opacity: 0.8;
+}
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+input {
+    width: 70%;
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    text-align: center;
+    background-color: #E5E5E5;
+}
+
+button {
+    background-color: #D8831D;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    margin-left: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #b06b15;
+}
+
+        }
     </style>
 </head>
 <body>
 <!-- Barra de navegación mejorada -->
-<nav class="custom-nav" style="background-color: #2c3e50; padding: 15px 0; border-radius: 5px;">
-    <div class="nav-container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
-        <ul class="nav-list" style="list-style: none; display: flex; justify-content: center; gap: 30px; margin: 0; padding: 0;">
-            <li><a href="{% url 'lista_empresas' %}" class="nav-link" style="color: #dddddd; font-size: 18px; font-weight: bold; text-decoration: none; transition: color 0.3s ease;">Empresas</a></li>
-            <li><a href="#" class="nav-link" style="color: #dddddd; font-size: 18px; font-weight: bold; text-decoration: none; transition: color 0.3s ease;">Servicios</a></li>
-            <li><a href="#" class="nav-link" style="color: #dddddd; font-size: 18px; font-weight: bold; text-decoration: none; transition: color 0.3s ease;">Contacto</a></li>
-            <li><a href="#" class="nav-link" style="color: #dddddd; font-size: 18px; font-weight: bold; text-decoration: none; transition: color 0.3s ease;">Nosotros</a></li>
-        </ul>
-    </div>
-</nav>
+
+
         {% block content %}
         {% endblock %}
     
 <!-- Pie de página mejorado con clases específicas -->
-<footer class="custom-footer" style="background-color: #2c3e50; color: #dddddd; padding: 40px 0; text-align: center;">
+<footer class="custom-footer" style="background-color: #E5E5E5; color: #D8831D; padding: 40px 0; text-align: center;">
     <div class="footer-container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
         <div class="footer-content" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px;">
             <!-- Sobre la empresa -->
             <div class="footer-section" style="max-width: 300px; text-align: left;">
-                <h4 class="footer-title" style="border-bottom: 2px solid #007BFF; padding-bottom: 8px; color: #ffffff; font-size: 18px; margin-bottom: 15px;">Empresa</h4>
-                <p class="footer-text" style="color: #dddddd; font-size: 14px; line-height: 1.6;">Proveemos información de empresas registradas para facilitar la conexión entre negocios y clientes.</p>
+                <h4 class="footer-title" style="border-bottom: 2px solid #D8831D; padding-bottom: 8px; color: #D8831D; font-size: 18px; margin-bottom: 15px;">Empresa</h4>
+                <p class="footer-text" style="color: #D8831D; font-size: 14px; line-height: 1.6;">Proveemos información de empresas registradas para facilitar la conexión entre negocios y clientes.</p>
             </div>
 
             <!-- Enlaces -->
             <div class="footer-section" style="max-width: 200px; text-align: left;">
-                <h4 class="footer-title" style="border-bottom: 2px solid #007BFF; padding-bottom: 8px; color: #ffffff; font-size: 18px; margin-bottom: 15px;">Enlaces</h4>
+                <h4 class="footer-title" style="border-bottom: 2px solid #D8831D; padding-bottom: 8px; color: #D8831D; font-size: 18px; margin-bottom: 15px;">Enlaces</h4>
                 <ul class="footer-links" style="list-style: none; padding: 0; margin: 0;">
-                    <li style="margin-bottom: 10px;"><a href="#" class="footer-link" style="color: #dddddd; text-decoration: none; font-size: 14px; transition: color 0.3s;">Inicio</a></li>
-                    <li style="margin-bottom: 10px;"><a href="#" class="footer-link" style="color: #dddddd; text-decoration: none; font-size: 14px; transition: color 0.3s;">Empresas</a></li>
-                    <li style="margin-bottom: 10px;"><a href="#" class="footer-link" style="color: #dddddd; text-decoration: none; font-size: 14px; transition: color 0.3s;">Servicios</a></li>
-                    <li style="margin-bottom: 10px;"><a href="#" class="footer-link" style="color: #dddddd; text-decoration: none; font-size: 14px; transition: color 0.3s;">Contacto</a></li>
+                    <li style="margin-bottom: 10px;"><a href="#" class="footer-link" style="color: #D8831D; text-decoration: none; font-size: 14px; transition: color 0.3s;">Inicio</a></li>
+                    <li style="margin-bottom: 10px;"><a href="#" class="footer-link" style="color: #D8831D;text-decoration: none; font-size: 14px; transition: color 0.3s;">Empresas</a></li>
+                    <li style="margin-bottom: 10px;"><a href="#" class="footer-link" style="color: #D8831D; text-decoration: none; font-size: 14px; transition: color 0.3s;">Servicios</a></li>
+                    <li style="margin-bottom: 10px;"><a href="#" class="footer-link" style="color: #D8831D; text-decoration: none; font-size: 14px; transition: color 0.3s;">Contacto</a></li>
                 </ul>
             </div>
 
             <!-- Contacto -->
             <div class="footer-section" style="max-width: 250px; text-align: left;">
-                <h4 class="footer-title" style="border-bottom: 2px solid #007BFF; padding-bottom: 8px; color: #ffffff; font-size: 18px; margin-bottom: 15px;">Contacto</h4>
-                <p class="footer-text" style="color: #dddddd; font-size: 14px; margin-bottom: 10px;"><i class="fas fa-envelope" style="margin-right: 8px;"></i> info@empresa.com</p>
-                <p class="footer-text" style="color: #dddddd; font-size: 14px; margin-bottom: 10px;"><i class="fas fa-phone" style="margin-right: 8px;"></i> +54 11 2345-6789</p>
-                <p class="footer-text" style="color: #dddddd; font-size: 14px; margin-bottom: 10px;"><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i> Buenos Aires, Argentina</p>
+                <h4 class="footer-title" style="border-bottom: 2px solid #D8831D; padding-bottom: 8px; color: #D8831D; font-size: 18px; margin-bottom: 15px;">Contacto</h4>
+                <p class="footer-text" style="color: #D8831D; font-size: 14px; margin-bottom: 10px;"><i class="fas fa-envelope" style="margin-right: 8px;"></i> info@empresa.com</p>
+                <p class="footer-text" style="color: #D8831D; font-size: 14px; margin-bottom: 10px;"><i class="fas fa-phone" style="margin-right: 8px;"></i> +54 11 2345-6789</p>
+                <p class="footer-text" style="color: #D8831D; font-size: 14px; margin-bottom: 10px;"><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i> Buenos Aires, Argentina</p>
             </div>
 
             <!-- Redes sociales -->
             <div class="footer-section" style="max-width: 200px; text-align: left;">
-                <h4 class="footer-title" style="border-bottom: 2px solid #007BFF; padding-bottom: 8px; color: #ffffff; font-size: 18px; margin-bottom: 15px;">Síguenos</h4>
+                <h4 class="footer-title" style="border-bottom: 2px solid #D8831D; padding-bottom: 8px; color: #D8831D; font-size: 18px; margin-bottom: 15px;">Síguenos</h4>
                 <div class="footer-social" style="display: flex; gap: 15px; justify-content: flex-start;">
                     <a href="#" class="footer-social-link" style="color: #dddddd; font-size: 24px; transition: color 0.3s;"><i class="fab fa-facebook"></i></a>
                     <a href="#" class="footer-social-link" style="color: #dddddd; font-size: 24px; transition: color 0.3s;"><i class="fab fa-twitter"></i></a>
@@ -321,7 +400,7 @@
 
     <!-- Copyright -->
     <div class="footer-copyright" style="margin-top: 40px; background-color: rgba(0, 0, 0, 0.2); padding: 15px;">
-        <p class="footer-text" style="font-size: 14px; margin: 0; color: #dddddd;">&copy; 2025 Empresas Registradas. Todos los derechos reservados.</p>
+        <p class="footer-text" style="font-size: 14px; margin: 0; color: #D8831D;">&copy; 2025 Empresas Registradas. Todos los derechos reservados.</p>
     </div>
 </footer>
 </body>
