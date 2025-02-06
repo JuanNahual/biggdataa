@@ -1,4 +1,6 @@
 {% extends 'Empresas/base.html' %}
+{% load static %}
+
 {% block content %}
     <div class="container empresa-detail">
         <!-- Encabezado -->
@@ -35,22 +37,23 @@
             <ul class="social-links">
                 {% if empresa.facebook %}
                     <li>
-                        <a href="{{ empresa.facebook }}" class="social-link" target="_blank">
-                            <i class="fab fa-facebook"></i> Facebook
+                        <a href="{{ empresa.facebook }}"  class="icono-redes" target="_blank">
+                            <img src="{% static 'img/whatsapp.png' %}" alt="Instagram" class="icono-redes">
                         </a>
                     </li>
                 {% endif %}
                 {% if empresa.instagram %}
                     <li>
-                        <a href="{{ empresa.instagram }}" class="social-link" target="_blank">
-                            <i class="fab fa-instagram"></i> Instagram
+                        <a href="{{ empresa.instagram }}" class="icono-redes" target="_blank">
+                            <img src="{% static 'img/instagram.png' %}" alt="Instagram" class="icono-redes">
+                            
                         </a>
                     </li>
                 {% endif %}
                 {% if empresa.twitter %}
                     <li>
-                        <a href="{{ empresa.twitter }}" class="social-link" target="_blank">
-                            <i class="fab fa-twitter"></i> Twitter
+                        <a href="{{ empresa.twitter }}" class="icono-redes" target="_blank">
+                            <img src="{% static 'img/facebook.png' %}" alt="Instagram" class="icono-redes">
                         </a>
                     </li>
                 {% endif %}
