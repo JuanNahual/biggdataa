@@ -9,9 +9,7 @@ pip install -r requirements.txt
 python manage.py collectstatic --noinput
 python manage.py migrate
 
-# Verificar si la carpeta staticfiles existe y listar su contenido
-echo "Verificando si la carpeta staticfiles existe..."
-ls -l $BASE_DIR/staticfiles
+ls -l $BASE_DIR/staticfiles || echo "No se encuentra la carpeta staticfiles"
 
 # Crear la carpeta media si no existe
 mkdir -p media/empresas
