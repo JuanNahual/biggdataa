@@ -1,8 +1,9 @@
 
     {% extends 'Empresas/base.html' %}
     {% block content %}
-    <div class="container">
-                    
+    
+        
+            <div class="container">
         <header>
             <h1><span class="big">Big</span> <span class="data">DATA</span></h1>
             <p class="subtitulo">ENCONTRÁ EL SERVICIO QUE ESTÁS BUSCANDO</p>
@@ -11,8 +12,9 @@
             </p>
         </header>
 
+
         <form id="filterForm">
-            <input type="text" id="searchInput" name="q" placeholder="Buscar por nombre...">
+            <input type="text" id="searchInput" name="q" placeholder="Escriba el servicio, comercio...">
             <select id="rubroSelect" name="rubro">
                 <option value="">-- RUBROS --</option>
                 {% for rubro in rubros %}
@@ -32,7 +34,7 @@
                 <li class="empty-message">No se encontraron resultados.</li>
             {% endfor %}
         </ul>
-    </div>
+    
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
